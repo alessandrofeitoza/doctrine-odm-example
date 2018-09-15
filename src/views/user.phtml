@@ -1,0 +1,26 @@
+<h2>Users</h2>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Registered at</th>
+    </tr>
+
+    <?php
+    /**
+     * @var \Application\Document\User $item
+     */
+        foreach ($data['users'] as $item) {
+            echo '<tr>';
+
+            echo '<td>' , $item->getName(), '</td>';
+            echo '<td>' , $item->getEmail(), '</td>';
+            echo '<td>' , $item->getRegistered()->format('d/m/Y H:i:s'), '</td>';
+
+            echo '</tr>';
+        }
+    ?>
+</table>
+
+<br><br>
+<a href="/user/add">New User</a>
